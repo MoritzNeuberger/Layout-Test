@@ -1,14 +1,119 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+%-------------------------------------------------------------------------------
+%   Template for a GSTR-yy-Dxx note
+%
+%   12.12.2009/ pg+sts
+%   17.05.2011/ pg
+%   11.04.2017/ cw
+%
+% -> CHECK FOR LATEST gerda-abbreviations.tex
+%-------------------------------------------------------------------------------
 
-\title{Analysis of Kr85 concentration in the liquid argon of GERDA Phase II - Layout-Test}
-\author{Moritz Neuberger}
-\date{July 2018}
+%-------------------------------------------------------------------------------
+%\documentclass[11pt,a4paper]{article}
+\documentclass[encoding=utf8,british]{tumphthesis}
+\makeatletter\@openrightfalse
+%\documentclass[12pt,a4paper,twoside]{article}%
+%-------------------------------------------------------------------------------
+\include{header}              % packages/settings
+\include{commands}            % commands, hyphenation etc.
+\include{gerda-abbreviations} % for definitions see:  abbreviations.tex
+%-------------------------------------------------------------------------------
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -----------------------------------------------------  DEFINE YOUR REPORT  ---
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\repnumber}  {GSTR-18-0xx}    % REPNUMBER (yy->year, 0xx->running number)
+\newcommand{\repdate}    {August 8, 2018} % DATE
+\newcommand{\titleheader}{Analysis of \Kr concentration in the liquid argon of GERDA Phase II} % TITLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --------------------------------------------------------  begin document   ---
 \begin{document}
+% --------------------------------------------------------  begin title page  --
+\begin{titlepage}
+% --------------------------------------------------------- logo /header -------
+\parbox[b]{40mm}{
+\ifmakefigures%
+  \vspace*{-7truecm}
+  \includegraphics[scale=0.25]{./gerda-GSTR-logo.pdf}
+\fi%
+  }
+\parbox[b]{110mm}{\hfill\hfill
+\textsc{Gerda} Scientific / Technical Report:~~ \textbf{\repnumber}\\[12mm]
+ \hspace*{30mm}\hfill\hfill\repdate\\
+ \hspace*{1mm}\hfill\small gerda-abbreviation.tex:~\versionabb}
 
-\maketitle
+\vspace*{20mm}
+\begin{center}
+{\Large\textbf{\titleheader}}
+\vspace*{10mm}
 
-\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------------------------------------------------  DEFINE YOUR AUTHORS  ---
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Moritz Neuberger, Christoph Wiesinger$^o$), Steffan Schönert$^o$)
+\vspace*{5mm}
 
+% Address:  (select the appropriate ones and change letters if needed) 
+%$^a$)  INFN Laboratori Nazionali del Gran Sasso  and Gran Sasso Science Institute, Assergi,  Italy\\[1mm]
+%$^b$)  INFN Laboratori Nazionali del Sud, Catania, Italy\\[1mm]
+%$^c$)  Institute of Physics, Jagiellonian University, Cracow, Poland\\[1mm]
+%$^d$)  Institut f{\"u}r Kern- und Teilchenphysik Technische Universit{\"a}t Dresden, Dresden, Germany\\[1mm]
+%$^e$)  Joint Institute for Nuclear Research, Dubna, Russia\\[1mm]
+%$^f$)  European Commission, JRC-Geel, Geel, Belgium\\[1mm]
+%$^g$)  Max-Planck-Institut f{\"u}r Kernphysik, Heidelberg, Germany\\[1mm]
+%$^h$)  Universit{\`a} di Milano Bicocca, Milan, Italy\\[1mm]  
+%$^i$)  INFN Milano Bicocca, Milan, Italy\\[1mm]                                     
+%$^j$)  Universit{\`a} degli Studi di Milano e INFN Milano, Milan, Italy\\[1mm]                                 
+%$^k$)  Institute for Nuclear Research of the Russian Academy of Sciences, Moscow, Russia\\[1mm]                 
+%$^l$)  Institute for Theoretical and Experimental Physics, NRC ``Kurchatov Institute'', Moscow, Russia\\[1mm]                                
+%$^m$)  National Research Centre ``Kurchatov Institute'', Moscow, Russia\\[1mm]                                       
+%$^n$)  Max-Planck-Institut f{\"ur} Physik, Munich, Germany\\[1mm]                                          
+$^o$)  Physik Department E15 and Excellence Cluster Universe, Technische  Universit{\"a}t M{\"u}nchen, Munich, Germany\\[1mm]                           
+%$^p$)  Dipartimento di Fisica e Astronomia dell{`}Universit{\`a} di Padova, Padova, Italy\\[1mm]         
+%$^q$)  INFN  Padova, Padova, Italy\\[1mm]
+%$^r$)  Physikalisches Institut, Eberhard Karls Universit{\"a}t T{\"u}bingen, T{\"u}bingen, Germany\\[1mm]       
+%$^s$)  Physik Institut der Universit{\"a}t Z{\"u}rich, Z{\"u}rich, Switzerland\\[1mm] 
+\vspace*{20mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------  WRITE A SHORT ASTRACT  ---
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Seite beabsichtigt leer gelassen.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{center}
+\vfill
+\end{titlepage}
+\vfill
+
+% ---------------------------------------------------------------- settings  ---
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%\pagestyle{myheadings}
+%\markboth{~-~~\repnumber\hfill\titleheader}{\titleheader\hfill\repnumber~~-~}
+\newpage
+%----------------------------------------------------------------- body --------
+\input{body}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -----------------------------------------------  ADD SOME ACKNOWLEDGMENTS  ---
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgments}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------- appendix ----
+\input{appendix}
+
+%--------------------------------------------------------------- references ----
+\bibliographystyle{plain}
+\bibliography{references}
+\@openrightfalse\makeatletter
 \end{document}
