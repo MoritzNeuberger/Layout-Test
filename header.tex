@@ -1,0 +1,53 @@
+%\documentclass[encoding=utf8,british]{tumphthesis}
+
+\usepackage[BCOR=10mm,DIV=12,headinclude=false,footinclude=false]{typearea}
+\areaset[10mm]{160mm}{230mm}
+\setlength{\voffset}{10mm}
+\usepackage[pdftex,draft=false,debug=false]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[american]{babel}
+\selectlanguage{american}
+%\usepackage[ansinew]{inputenc}
+\usepackage{cite}
+%\usepackage{eurosym}
+\usepackage{marvosym}  %EURO symbols
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{multicol,graphics,verbatim}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{rotating}  
+\usepackage{multirow}
+\usepackage{booktabs}  %better hlines in tables
+\usepackage{nicefrac}  % for nice 1/2 sign
+\usepackage{calc}      % for parbox = including indented paragraph
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{units}
+\usepackage{upgreek}   %  for upright greek letters in units
+\usepackage{ifthen}
+\usepackage{lineno}
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{capt-of}
+\usepackage[demo]{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+%\modulolinenumbers[5]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   switch on/off line numbers
+%\linenumbers                            %   comment to switch off
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   switch off figures
+\usepackage{ifthen}                     %   
+\newboolean{makefigures}                %   declaration
+\setboolean{makefigures}{true}          %   definition    on  == true
+%\setboolean{makefigures}{false}        %   definition    off == false
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\itemsep -4pt
+\renewcommand{\floatpagefraction}{0.09}
+
+%tables
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
