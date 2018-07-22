@@ -347,7 +347,7 @@
 		\end{minipage}
 		\hfill
 		\begin{minipage}[b]{.4\linewidth}
-			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{PH}\hspace{.5cm}\includegraphics[width=1.87cm]{tumlogo}}{}
+			\raggedleft\ifpdfoutput{\includegraphics[width=1cm]{./Bilder/PH}\hspace{.5cm}\includegraphics[width=1.87cm]{tumlogo}}{}
 		\end{minipage}%
 		\null\vfill%
 		\begin{center}
