@@ -113,7 +113,7 @@
 	bibstyle=numeric-comp,citestyle=numeric-comp,%
 	}{biblatex}
 \RequirePackage{biblatex}
-\IfFileExists{\reference.bib}{\addbibresource{\reference.bib}}{\relax}%
+%\IfFileExists{\reference.bib}{\addbibresource{\reference.bib}}{\relax}%
 \defbibheading{bibliography}[\bibname]{\chapter{#1}}
 
 % Die AMS-Pakete dienen zum modernen Satz von Gleichungen. Die Integralgrenzen
