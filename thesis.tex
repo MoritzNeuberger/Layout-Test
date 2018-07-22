@@ -5,7 +5,14 @@
 % auszugeben und kann in einer echten Abschlussarbeit natürlich weggelassen 
 % (oder auskommentiert) werden.
 \usepackage{lipsum}
-
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{units}
+\usepackage{capt-of}
+\usepackage{subfig}
+\usepackage{cite}
+\include{gerda-abbreviations}
 % Die Metadaten der Abschlussarbeit werden auf dem Deckblatt gedruckt und
 % in dem PDF eingetragen.
 \subject{Abschlussarbeit im Bachelorstudiengang Physik}
@@ -19,6 +26,10 @@
 % und Tag der mündlichen Prüfung vermerkt werden.
 \lowertitleback{Erstgutachter (Themensteller): Prof.\ S.~Schönert\\
 Zweitgutachter: Prof.\ S.~Preuss}
+
+
+\bibliography{thesis}
+\bibliographystyle{plain}
 
 \begin{document}
 % Ist die Arbeit auf Englisch verfasst, hier die Sprache umschalten. 
@@ -471,7 +482,7 @@ You can see that the positron electron annihilation peak can not be identified a
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}{.5\textwidth}
-		\includegraphics[width=875mm]{./Bilder/AntiLArBEGe.pdf}
+		\includegraphics[width=75mm]{./Bilder/AntiLArBEGe.pdf}
 		\caption{BEGes}
 		\label{fig:AntiLArBEGes}
 	\end{subfigure}%
@@ -939,8 +950,8 @@ Of these two value we can now also calculate a mean specific activity $\bar{a}_{
 \\
 
 We can now make some comparisons of this value with the WARP and the Darkside experiments.
-In the case of the WARP experiment a specific activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ \label{} was measured for the \Kr.
-On the other hand, an specific activity of $(28577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
+In the case of the WARP experiment a specific activity of $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ \label{} was measured for the \Kr.
+On the other hand, an specific activity of $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
 Our determined value of $(0.508\pm0.085)\frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole tree orders of magnitude smaller than the WARP experiment.
 From these comparisons we can see that our results seem to verify the first approximations mentioned in the introduction predicting that the \Kr activity seems to be much smaller than in other experiments using liquid argon.
 \\
@@ -1445,7 +1456,7 @@ This was due to the falsely made assumption that \Kr is the only isotope in the 
 
 
 \backmatter
-\printbibliography
 
+\printbibliography
 
 \end{document}
