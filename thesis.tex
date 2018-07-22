@@ -7,7 +7,7 @@
 \usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{caption}
-%\usepackage{subcaption}
+\usepackage{subcaption}
 \usepackage{units}
 \usepackage{capt-of}
 \usepackage{subfig}
@@ -326,7 +326,7 @@ Dieser Teil wird noch stark gekürzt bzw. ich werde mich hier wahrschenlich vor 
 
 As stated in the introduction, the main goal of this theses is to approximate the concentration of the isotope \Kr in the liquid argon coolant, shielding and scintillate of the GERDA experiment. 
 This value is of special interest, as in other experiments this isotope in the liquid argon has produced a not negligible background. 
-For example, a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\) was measured in the Darkside experiment \cite{PhysRevD.93.081101} and \((0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}\) in the WARP experiment \cite{Benetti:2006az}.
+For example, a specific activity of  \((2.86\pm0.18) \frac{\unit{mBq}}{\unit{l}}\) was measured in the Darkside experiment \cite{agnes_results_2016} and \((0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}\) in the WARP experiment \cite{benetti_measurement_2006}.
 This corresponds to a concentration of about \((2.32\pm0.14)\times10^{-18}\frac{\unit{mol}}{\unit{l}}\) for the Darkside and  \((1.30\pm1.05)\times10^{-16}\frac{\unit{mol}}{\unit{l}}\) for the WARP experiment.
 The concentration of \Kr in the GERDA experiment therefor of interest as it provides an estimation of its influence on the measured background.
 \\
@@ -400,7 +400,7 @@ After applying the first few rather general filters on the measured events one h
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution and detector efficiencies. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
-For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 272keV (see appendix \ref{sec:} ) \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
+For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 272keV (see appendix \ref{sec:} ) \cite{agostini_background_2017}. 
 On the other hand, due to the BEGes being smaller they also have a lower detection efficiency.
 It is therefor necessary to evaluate their measured data separately.
 \\
@@ -458,7 +458,7 @@ This chapter tries to implement a filter that uses this mechanism and discusses 
 \\
 
 Among other things, each event in tier 4 was given a flag called "isLArVetoed".
-This flag is always triggered whenever an event in the Germanium detectors coincides with a scintillation signal of about 0.5phe in one of the photomultipliers positioned in the liquid argon tank \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}.
+This flag is always triggered whenever an event in the Germanium detectors coincides with a scintillation signal of about 0.5phe in one of the photomultipliers positioned in the liquid argon tank \cite{agostini_background_2017}.
 If one plots all events in which this flag has not been set one gets figure \ref{fig:LArBEGes} for the BEGes and figure \ref{fig:LArCOAX} for the COAX detectors.
 You can see that the positron electron annihilation peak can not be identified any longer while the 514keV peak seems almost unchanged.
 \\
@@ -548,7 +548,7 @@ Because of the small number of events however, it is almost impossible to make a
 
 Interestingly, the majority of all signals with a negative time difference were measured by the PMTs. 
 This could perhaps be due to the better temporal resolution of the PMTs. 
-The signals of all PMTs are recorded with a resolution of 10ns and the SiPM with a resolution of 80ns but over a larger range than the PMTs\cite{nature}. 
+The signals of all PMTs are recorded with a resolution of 10ns and the SiPM with a resolution of 80ns but over a larger range than the PMTs \cite{agostini_background_2017}. 
 However, since the expected time difference is in the order of \(\mu\)s, this is no reason for the reduced number of measured events. 
 Another difference between the photomultiplier types is that the PMTs have a faster reaction time than the SiPMs. 
 As we will see, practically all deflections in the measured intensity of the PMT signal caused by procoincedents have already subsided before the signal was measured in the germanium detectors. 
@@ -793,7 +793,7 @@ How exactly this was implemented is the topic of the next chapter.
 
 As described above, we want to determine a conversion factor between the measured 514keV events and the decay density of \Kr necessary to create this signal.
 Such a conversion factor can be determined with the help of a Monte Carlo simulation.
-The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA \cite{boswell_melissa_chan_yuen-dat_detwiler_a._finnerty_padraic_henning_gehman_et}.
+The tool used to perform this simulation is \mage (MAjorana-GErda), a GEANT4-based physics simulation software developed jointly by MAJORANA and GERDA \cite{boswell_mage_2010}.
 Both experiments aim to measure the neutrinoless double beta decay using enriched Germanium detectors.
 Because it is expected that the halflife of this decay is in the order of at least \(10^{25}\) years, a lot of effort is put into finding out how big the contribution of different isotopes to the background is.
 \mage is therefor specialized to simulate radioactive decays and their corresponding measured events in Germanium detectors.
@@ -932,13 +932,14 @@ Coincidentally, the multiplication of the individual measuring time of a detecto
 This means that to calculate the mean measuring time, we just have to divide the combined exposure of all detectors of the same kind by their combined mass.
 \\
 
-No matter what approach you take, in the end you get a mean measuring time of !!!!! for the BEGes and !!!!! for the COAX detectors.
+No matter what approach you take, you can now determine the mean measuring times using equation \ref{meanmeauringtime}.
 
 \begin{equation*}
     \bar{t} = \frac{\sum_\mathrm{i} t_\mathrm{i} \times m_\mathrm{i}}{\sum_\mathrm{i} m_\mathrm{i}} = 1.592
-    \mathrm{y}
+\label{meanmeauringtime}
 \end{equation*}
 
+From this, an average measurement time for the BEGes of  and for the COAX of can be calculated.
 With these mean measuring times we can now finally calculate the mean specific activity $\bar{a}$ of \Kr over the curse of all of \PII by applying
 \begin{equation*}
     \bar{a} = \frac{\rho_{dec} }{\bar{t}} = \frac{\mathrm{N}}{p}\times\frac{1}{\epsilon_\gamma V_{sim}}\times\frac{1}{\bar{t}}
