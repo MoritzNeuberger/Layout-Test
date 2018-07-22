@@ -1,14 +1,14 @@
-#Makefile für TUM-PH-Thesis
+#Makefile fï¿½r TUM-PH-Thesis
 #
 # Dieses makefile geht davon aus, dass
-# - die Hauptdatei den Namen $(BASEFILENAME).tex trägt und
+# - die Hauptdatei den Namen $(BASEFILENAME).tex trï¿½gt und
 # - alle TeX-Dateien, die inkludiert werden im aktuellen Verzeichnis liegen,
 # - Abbildungen (PDF, PNG, JPG, EPS, PS) im Unterverzeichnis ./Abbildungen/ liegen und
 #
 # Wenn Abbildungen vermittels PST-PDF  eingebunden werden, die Variable PSTRICKS=1 setzen.
 
 BASEFILENAME = thesis
-PSTRICKS = 0
+PSTRICKS = 1
 
 FOLDERSEP = /
 PATHSEP = :
@@ -19,13 +19,13 @@ ifneq (,$(findstring Windows,$(OS)))
 endif
 
 ifeq ($(shell kpsewhich PH.pdf | grep -c ''),0)
-	override TEXINPUTS := ./Abbildungen/$(PATHSEP)$(TEXINPUTS)
+	override TEXINPUTS := ./Bilder/$(PATHSEP)$(TEXINPUTS)
 	export TEXINPUTS
 endif
 
 TEXDATEIEN = $(wildcard *.tex) $(BASEFILENAME).bib
 
-PSABBILDUNGEN = $(wildcard ./Abbildungen/*.eps) $(wildcard ./Abbildungen/*.ps) $(wildcard ./Abbildungen/*.pfx) $(wildcard ./Abbildungen/*.ovp)
+PSABBILDUNGEN = $(wildcard ./Abbildungen/*.eps) $(wildcard ./Abbildungen/*.ps) $(wildcard ./BildAbbildungener/*.pfx) $(wildcard ./Abbildungen/*.ovp)
 
 ifeq ($(PSTRICKS),0)
 	PDFABBILDUNGEN = $(wildcard ./Abbildungen/*.png) $(wildcard ./Abbildungen/*.pdf) $(wildcard ./Abbildungen/*.jpg)

@@ -327,7 +327,7 @@ This veto can therefor be used to filter out high-energy particles from outside 
 \\
 
 For a photon from the relaxation of \nuc{Rb}{85m} to create the distinct 514keV peak it is necessary to deposit all of its energy in only one of the detectors. 
-This means that any event in which two different germanium detectors measured a non neglectable energy deposition is most likely not caused by a \Kr decay.
+This means that any event in which two different germanium detectors measured a non negligible energy deposition is most likely not caused by a \Kr decay.
 This kind of filtering is called a detector anti-coincidence filter.
 Whether an event has more than one detector measure a signal can be determined by the multiplicity counter of each event stored in tier 3 and 4.
 Using this counter even more background of none \Kr decays can be repressed.
@@ -337,7 +337,7 @@ After applying the first few rather general filters on the measured events one h
 As it was elaborated in section \ref{sec:ExSetup}, two different types of detectors were used in the GERAD experiment - the BEGes (Broad Energy Germanium diods) and the COAX (coaxial diods). 
 Due to their differences in design and weigh the two types have a different energy resolution and detector efficiencies. 
 The BEGes are generally smaller and therefor have a higher energy resolution compared to the rather big COAX detectors.
-For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 2,72keV (see appendix \ref{sec:} ) \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
+For example, at an energy of 514keV the BEGes have a resolution of about 2.267keV while the COAX detectors are about 0.5keV higher at 272keV (see appendix \ref{sec:} ) \cite{agostini_allardt_bakalyarov_barabanov_baudis_bauer_bellotti_belogurov_belyaev_benato_et al._2017}. 
 On the other hand, due to the BEGes being smaller they also have a lower detection efficiency.
 It is therefor necessary to evaluate their measured data separately.
 \\
@@ -666,7 +666,7 @@ The fit results in the function displayed in equation \ref{equ:FitFilters}.
 \\ 
 
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi\mathrm{C}}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\exp\left(\mathrm{E}x\right) + \mathrm{F}
+\mathrm{f}(x) = \mathrm{A}\frac{1}{\sqrt{2\pi}\mathrm{C}}\exp\left(-\frac{(x-\mathrm{B})^2}{2\mathrm{C}^2}\right) + \mathrm{D}\exp\left(\mathrm{E}x\right) + \mathrm{F}
 \label{equ:FitFilters}
 \end{equation}
 \\
@@ -885,28 +885,52 @@ With these mean measuring times we can now finally calculate the mean specific a
 \end{equation*}
 
 
-Finally, we can calculate that with the line count rate analysis we were able to determine an activity of $\bar{a}_{\mathrm{1,BEGe}} = (5.46\pm0.827)\times10^{-4}	\frac{\unit{Bq}}{\unit{l}}$ in the BEGes and a specific activity of $\bar{a}_{\mathrm{1,COAX}} = (4.70\pm0.887)\times10^{-4}	\frac{\unit{Bq}}{\unit{l}}$ in the COAX.
+With the line count rate analysis we are now finally able to determine an activity of $\bar{a}_{\mathrm{1,BEGe}} = (5.46\pm0.827)\times10^{-4}	\frac{\unit{Bq}}{\unit{l}}$ in the BEGes and a specific activity of $\bar{a}_{\mathrm{1,COAX}} = (4.70\pm0.887)\times10^{-4}	\frac{\unit{Bq}}{\unit{l}}$ in the COAX.
 These two values differ only inside their range of uncertainty which is why these results are of good quality.
 Of these two value we can now also calculate a mean specific activity $\bar{a}_{1} = (5.08\pm0.857)\times10^{-4}\frac{\unit{Bq}}{\unit{l}}$.
 \\
 
-We can now already make some early comparisons to the WARP and the Darkside experiments.
-Because we can now calculate how many events we should have seen if the specific activity of \Kr from the other experiments would have been present.
+We can now make some comparisons of this value with the WARP and the Darkside experiments.
+In the case of the WARP experiment a specific activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ \label{} was measured for the \Kr.
+On the other hand, an specific activity of $(28577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
+Our determined value of $(0.508\pm0.085)\frac{\unit{mBq}}{\unit{l}}$ is about one order of magnitude smaller than the specific activity in the Darkside and whole tree orders of magnitude smaller than the WARP experiment.
+From these comparisons we can see that our results seem to verify the first approximations mentioned in the introduction predicting that the \Kr activity seems to be much smaller than in other experiments using liquid argon.
+\\
+
+What we can also do now is take the specific activities of the other two experiments and determine how many counts we would have measured if the \Kr had their specific activity.
 As simplification we restrict ourselves here to the theoretical values that could be measured in the BEGe detectors. 
-In the case of the WARP experiment a specific activity of $(0,16\pm0,13)\frac{\unit{Bq}}{\unit{l}}$ \label{} was measured for the \Kr.
-How many events this corresponds to in the BEGe detectors we can determine with the help of formula \ref{equ:correspondingEvents}.
+How many counts the corresponds activity would induce in the BEGe detectors we can determine with the help of formula \ref{equ:correspondingEvents}.
 \begin{equation}
-	\mathrm{N} = \bar{a} \times p \times \epsilon_\gamma V_{sim} \times \bar{t}
-	\label{equ:correspondingEvents}
+\mathrm{N} = \bar{a} \times p \times \epsilon_\gamma V_{sim} \times \bar{t}
+\label{equ:correspondingEvents}
 \end{equation}
-With this activity and the values determined from the analysis above we can calculate a corresponding amount of about 76152 events that would have be measured in the BEGes.
-As one could expect with such a high activity, the counting rate is also much higher than the 183 events determined from the actual measurement.
-On the other hand, an specific activity of $(2,8577 \pm 0,18122) \frac{\unit{mBq}}{\unit{l}}$ was measured in the Darkside experiment.
-This value is only of one order of magnitude bigger than the one calculated above.
-The corresponding line count at the 514keV peak for the Darkside experiment would therefor be of about 1360 measured events.
-From the specific activitys themselves we can already see that the determined activity of \Kr at GERDA is much smaller than the ones of the other two experiments.
-With the corresponding line count rate we can now also see that a specific activity higher than the determined value of $(5.08\pm0.857)\times10^{-4}\frac{\unit{Bq}}{\unit{l}}$ is very much unlikely because a much higher line count should have been measured in that case.
-And due to the fact that not many assumptions have been made in the course of this approach it can be expected, that the specific activity determined here comes very close to the actual value. 
+With the activity and the values determined from the analysis above we can calculate a corresponding amount of about 76152 events for the WARP experiment and 1360 in the Darkside experiment.
+In the case of the WARP experiment one could expect with such a high activity that the count rate is also much higher than the 183 events determined from the actual measurement.
+Again for the Darkside experiment we calculate a amount of counts about one order of magnitude higher than the here measured events.
+From these comparisons we can see that for a much higher specific activity of \Kr to have actually been present a much bigger amount of events should have been counted.
+As a graphical representation, the peaks that one would have been able to be seen in the measured spectrum are displayed in figure \ref{fig:WARP} and \ref{fig:Darkside}.
+In both diagrams the actually measured spectra are also displayed, even if they are not recognizable as in the case of the WARP peak.
+\\
+
+\begin{figure}[t!]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=80mm]{./Bilder/WARP.pdf}
+		\caption{Cross section from above}
+		\label{fig:WARP}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=80mm]{./Bilder/Darkside.pdf}
+		\caption{Radial cross section}
+		\label{fig:Darkside}
+	\end{subfigure}
+    \\
+	\vspace{0.5cm}
+    \caption{}
+\vspace{0.5cm}
+\end{figure}
 \\
 
 Now that we have determined a concrete value for the specific activity of \Kr we now come to our second attempt to measure the specific activity as described in the next chapter.
@@ -915,7 +939,7 @@ Now that we have determined a concrete value for the specific activity of \Kr we
 
 
 
-%	4,70E-04	8,87E-05	Bq/l
+%	4.70E-04	8,87E-05	Bq/l
 
 
 % calculate Amplitude of Gauss peak at 514keV and use factor from Monte Carlo Simulation to estimate
@@ -929,7 +953,7 @@ Now that we have determined a concrete value for the specific activity of \Kr we
 \label{sec:SAfromDecrease}
 
 As described in the beginning of section \ref{sec:AotKr}, the line count analysis method of the rare \Kr decay was expected to be relatively precise.
-By following this procedure we were able to determine the activity down to the order of 10$^{-5} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
+By following this procedure we were able to determine the activity down to the order of 10$^{-4} \frac{\mathrm{Bq}}{\mathrm{l}}$ with reasonable uncertainty.
 We will now concentrate on implementing and discussing the second approach of determining the specific activity by using the change of event rate over time.
 Because this method does not rely on any of the values used in the line count rate analysis this approach is truly completely independent of the other method.
 Ideally, a positive result from this method would confirm the specific activity determined in the previous chapter. 
@@ -937,19 +961,26 @@ Ideally, a positive result from this method would confirm the specific activity 
 
 But as it was also stated above, the second method is expected to be relatively imprecise.  
 This estimation came from the fact that this method relies on a great approximation.
-Because it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non neglectable change in its intensity.
-The idea behind this is that \Kr has the lowest half life \(T = 10.739\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
-In comparison, other radioactive isotopes that are of interest here are \nuc{Ar}{42} with a half-life of 32.9 y [], \nuc{Ar}{39} with 269 y and \nuc{Po}{210} with 138d. 
+For this method to be applied it is necessary to expect that in the time interval of all of \PII only the intensity of the \Kr isotope has a non negligible change in its intensity.
+The idea behind this comes from the fact that \Kr has the lowest half life \(T = 10.739\unit{y}\) of all the other residual radioactive isotopes in the liquid argon.
+In comparison, other radioactive isotopes that are of interest here are \nuc{Ar}{42} with a half-life of 32.9 y \cite{chen_nuclear_2016}, \nuc{Ar}{39} with 269 y \cite{singh_nuclear_2006} and \nuc{Po}{210} with 138d \cite{kondev_nuclear_2008}. 
+\\
+
 \nuc{Po}{210} has a much lower half life than \Kr but the energy of the escaping alpha particle much higher than the mean beta energy of all of the isotopes above.
-This is important, because over the course of this chapter we will at some point begin to only consider those events in our analysis that deposited an energy between 200 and 400 keV.
-The two different types of argon isotopes are like the \Kr located in the liquid argon and have both a mean beta energy close to \Kr's 251.59 keV for the most likely decay.
+This is important, because over the course of this chapter we will at some point begin to only consider those events in our analysis that deposited an energy between 200 and 400 keV.   
+This means even though \nuc{Po}{210} has a much lower half life it would not create much of a change in event rate due to its very low probably to release an alpha particle in this energy range.
+\\
+
+On the other hand, the two different types of argon isotopes have both a mean beta energy close to \Kr's 251.59 keV.
 Their change in event rate should therefor be measurable by our approach.
 The change in activity of \nuc{Ar}{39} can be neglected because its half life way to big.
-On the other hand, \nuc{Ar}{42} has a half life that is in the same order of magnitude as \Kr.
-But its specific activity has already been determined to be !!!!! hier der Wert hin ?43$\muiBq/l$? !!!!!
-This is an order of magnitude smaller than the activity we expect from \Kr and should therefore be dominated by it.   
-This means even though \nuc{Po}{210} has a much lower half life it would not create much of a change in event rate due to its very low probably to release an alpha particle in this energy range.
-Compared to those should \Kr be the only isotope to change its activity notably in the timespan of Phase II.
+\nuc{Ar}{42} on the other hand has a half life that is in the same order of magnitude as \Kr.
+But its specific activity has already been determined to be about $148\mui Bq/l$ \cite{becerici_schmidt_results_2014} which is about factor 3.5 smaller than the expected \Kr specific activity.
+Whether or not we have to consider the influence of this isotope will be discussed later in this theses.
+For now we will apply the simplification that its change will be small compared to \Kr.
+\\
+
+All other radioactive isotopes that are residual in the liquid argon have either a much longer half life than \nuc{Ar}{42}, their mean beta energy is much higher than 400keV or their specific activity is too small too small to measure any kind of change over time.
 It is therefor approximated that all change in intensity should only originate from the \Kr decay.
 But even if the activity determined by this method is not expected to have a much of a value for us, it can still be used as a crosscheck for the other activity determined above.
 \\
@@ -993,20 +1024,23 @@ The following sections will focus on the concrete implementation of this method 
     \caption{Change of Intensity with time. In both figures are the amount of events measured in one week plotted over the whole time of \PII. In figure (a) no filters were imposed onto the displayed events while in (b) only those events are shown that have an energy between 200 and 400 keV. One can see that further precautions must be taken before an exponential decrease can be determined. }
 \end{figure}
 
-To determine the event rate one has to plot the amount of measured events over time with a suitable binning (see figure \ref{fig:ZeitAll}).
-In this case a binning of one week per bin was chosen which results in about 114 weeks for the 2.17 years of \PII.
-It should be noted that we again, like in the line count rate analysis, only use those events in which the Muon Veto and the detector anti-coincidence veto is not triggered.
-The first thing that jump into your eyes when looking at figure \ref{fig:ZeitAll} is two different types for discontinuities can be seen.
-Oblivious we can not lay a exponential decrease fit function through this graph as long as these discontinuities are present.
-We therefor have to find a way to suppress them but to do that we have to investigate where these discontinuities originate from.
+To determine the event rate one has to plot the amount of measured events over time in an event histogram with a suitable binning (see figure \ref{fig:ZeitAll}).
+In this case a binning of one week per bin was chosen which results in about 114 bins for the 2.17 years of \PII.
+As with the line count rate analysis, here we used only these events in the \ref{fig:ZeitAll} histogram where the Muon veto and the detector anticoincidence veto were not triggered.
+When looking at the histogram for the first time two things jump into your eye.
+Firtsly, there seems to be a great jump in the amount of events measured in the second half of \PII.
+And secondly, there are times in which the amount of events measured drop to zero.
+These two discontinuous changes to our expected outcome of an exponential decrease make it impossible for us to lay an exponential fit function throug the graph.
+We therefor have to find a way to suppress them.
+But for this to be done we first have to investigate where these discontinuities originate from.
 \\
 
-Firstly, you see a big jump in the intensity at a later time of \PII.
-This jump originates from the lowering of the lower detection energy limit on the 12.10.2017.
-At this point in time the lower limit for the event detection in all detectors was drastically lowered.
+Firstly, we discuss the big jump in number of events measured.
+This jump originates from the change of the lowering of the energy threshold on the 12.10.2017.
+This reduction of the lower threshold dramatically increased the number of events measured.
 Due to every detector having different characteristics, the limit was set for each detector individually.
-Before the lowering the highest limit was set at 139keV for the BEGes and at 185 for the COAX.
-After the lowering all event with an energy of at least 17keV could be measured by all detectors.
+Before the lowering the highest limit was set at about 140keV for the BEGes and at 185 for the COAX.
+After the lowering all event with an energy of at least about 15keV could be recorded by all detectors.
 For a more graphical representation, see the beginning of the spectra in figure \ref{fig:before} for all events measured before and figure \ref{fig:after} for all events after the lowering of the limit. 
 This means that from the 12.10.2017 on a much higher event rate was measured just because more event were actually recored.
 To work around this continuity problem all we have to do is limit our event used for the analysis to those that have a minimal energy of 200keV. 
@@ -1037,16 +1071,18 @@ A new plot including only events between the energy limits of 200 and 400keV can
 	\vspace{0.5cm}
 \end{figure}
 
-The second discontinuities behavior originates from the same problem that we faced in the first method.
-Not all detectors were on all of the time and there were also time intervals in which nothing at all was measured.
-In section \ref{sec:CalcActiv} we used the test pulse signal to weigh each individual detector signals with which we were able to calculate a weighted mean measuring time.
-However here we are not interested in a mean measuring time over all of \PII.
-In this case we solve this issue by only using the events measured by all detectors that were on over all of \PII and weighing the resulting bins in the histogram with the amount of test pulse signals that occurred in the same time interval.
-By only taking those detectors that were always on at the times data was recorded will ensure us that all changes to the intensity by starting up or shutting off detectors will be suppressed.
-But now we still have the problem that the measuring periods were frequently interrupted.
+The second discontinuous behavior originates from the same problem that we faced in the line count rate analysis.
+Not all detectors were on all of the time and there were also time intervals in which no signal at all was recorded.
+Due to the fact that some of the detectors were turned on or off over the time of \PII will result in discontinuous changes in the event rate because more or fewer events were able to be measured.
+But this can easily be solved by only considering those events measured in a detector that was always turned on.
+Which detector was always on over all of \PII can be seen in figure \ref in the appendix.
+On the other hand due to there being time intervals in which no events were recorded the event rate drops discontinuous to zero there.
+In section \ref{sec:CalcActiv} we solved this problem by calculating an effective measuring time for each detectors.
+Here, however, we are not interested in an average measurement time over the entire \PII.
+In this method we must find a way to weigh each individual bin of the event histogram with the corresponding effective measurement time of that bin.
 This is where the test pulse signal comes in handy.
 It is a clear indication of when exactly data was actually recorded.
-This means that similar to the first method we can now determine effective measuring times of each time interval of the individual bin in the histogram.
+This means that similar to the first method we can now determine effective measuring times of each time interval of the bins.
 These mean measuring times can easily be calculated by plotting the test pulse signals in an histogram with the same binning as the event histogram and dividing each of these bins with the frequency of the test pulse of $f_\mathrm{TP} = 0.05\unit{Hz}$ (see figure \ref{fig:effectiveMeasuringTimes}).
 The contents of these bins in the test pulse histogram correspond now to the respective measuring time in the binning intervals. 
 \\
@@ -1074,7 +1110,7 @@ Or in other words, this new histogram shows us the event rate per week over all 
 From this graph we now want to determine the exponential change in the event rate by applying an exponential fit function.
 The exact fit function used is
 \begin{equation}
-\mathrm{f}(x) = \mathrm{A}\times\exp\left(\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}
+\mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}
 \label{equ:FitFilters}
 \end{equation}
 In this is A corresponding to the measured \Kr event rate of the decreasing function, B the half life of the decrease and C the constant event background rate.
@@ -1102,29 +1138,29 @@ What this simulation actually simulates and how we determine the conversion fact
 	\caption{Fit parameters of fit function \ref{equ:FitNoFilters} applied on the spectra of the respective detectors.}
     \label{tab:FitParZeit}
 \end{table}
-\begin{figure}{.5\textwidth}
+
+\begin{figure}[t!]
 	\centering
-	\includegraphics[width=\textwidth]{./Bilder/eventRateFit.pdf}
+	\ifmakefigures%
+	\includegraphics[width=100mm]{./Bilder/eventRateFit.pdf}
+	\fi%
 	\caption{effective measuring times}
 	\label{fig:ChangeInEventRateFit}
 \end{figure}%
 \begin{figure}[t!]
 	\centering
-	
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/Sim1Phasenraum.pdf}
 		\caption{after}
 		\label{fig:Sim1Spektrum}
 	\end{minipage}%
-
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./Bilder/Aktivitaet.pdf}
 		\caption{specific activity of \Kr over time}
 		\label{fig:activity}
 	\end{minipage}
-
 \end{figure}
 \section{Monte Carlo simulation}
 \label{sec:MonteCarlo2}
@@ -1180,12 +1216,12 @@ With the absolute amount N of decays simulated we determine a detector efficienc
 This values says that any decay in the liquid argon has a probability of $\epsilon_{\beta}$ to be detected by one of the detectors that was always on.
 With this value we can again calculate the volume independent conversation factor
 \begin{equation*}
-    \frac{1}{\epsilon_{\beta} V_{sim}} = (39,38\pm1,04) \frac{\unit{decay}}{\unit{events} \times l }
+    \frac{1}{\epsilon_{\beta} V_{sim}} = (39.38\pm1.04) \frac{\unit{decay}}{\unit{events} \times l }
 \end{equation*}
 \\
 
 With this conversation factor we can now also calculate the specific activity of \Kr.
-By applying equation \ref{equ:activityAt0} and feeding it with the values found we result in an specific activity of $a = (0,0614\pm0,0419) \frac{\unit{Bq}}{\unit{l}}$ at the start of Phase II.
+By applying equation \ref{equ:activityAt0} and feeding it with the values found we result in an specific activity of $a = (0.0614\pm0.0419) \frac{\unit{Bq}}{\unit{l}}$ at the start of Phase II.
 
 \begin{equation}
     a(t=0) = \frac{R_\mathrm{count}}{\epsilon_{\beta} V_{sim}} 
@@ -1201,59 +1237,155 @@ This can easily be done by integrating an exponential decay function over all of
     \bar{a} = \frac{1}{2.17\unit{y}} \int_0^{2.17y} a(t=0)\times\exp \left( \frac{\log(2)}{T} t \right) \mathrm{d}t
 \end{equation*}
 with T being the half life of \Kr.
-This results in an mean specific activity of $ \bar{a_{2}} = 0.057294 \frac{\unit{Bq}}{\unit{l}}$ if the BEGe detectors and $ $ in the COAX detectors.
-These two values differer only 
+This results in an mean specific activity of $ \bar{a_{2}} = 57.294 \frac{\unit{mBq}}{\unit{l}}$.
 \\
 
-If we now compared this result with the specific activity found in the line count rate analysis we realize that we have a problem.
+If you now compared this result with the specific activity found in the line count rate analysis you will realize that there is a problem.
 The mean specific activity of all investigated detectors found in the first method had a value of $\bar{a}_{1} = (5.08\pm0.857)\times10^{-4}\frac{\unit{Bq}}{\unit{l}}$.
-Compared to this is the value determined here is two orders of magnitude bigger.
+Compared to this is the value determined here two orders of magnitude bigger.
 This is problematic.
 But in actuality we could have seen this problem coming.
 Because if we would expect the amplitude of the function shown in figure \ref{fig:activity} to be in the same order of magnitude as the other activity we determined, no real change should be seen over the uncertainty.
-But where does it come from?
-The critical question now is: where did we make a mistake?
-This question and how we made this mistake will be the topic of the following section.
+The critical question are now: 
+Which of the methods is faulty, which of the assumption we used was wrong and can we still make a statement about \Kr specific activity from the problematic approach.
+These question will be answers in the following section.
 \\
 
 
-\section{Search for the origin of the error}
-\label{SearchForError}
+\section{Discussion}
+\label{Discussion}
 
-We already saw from the comparison of the first results with the specific activity from WARP and Darkside that a value of about 0.546 $\frac{mBq}{l}$ for the specific activity of \Kr in GERDA is very likely to be true.
-Otherwise a much higher line count rate would have been necessary to be measured.
-To evaluate the accuracy of our measurement results of the second method we can also compare its values to the Darkside and the WARP experiment and predict what the equivalent changes over time with the respective activities would looks like.
+The biggest advantage of the line count rate analysis compared to the second method is that in its case the investigated effect can only originate from \Kr and no other isotope.
+Because of this the likelihood of its determined value being the actual specific activity is relatively high.
+By comparing the results of the first method with those of the WARP and Darkside experiments, we have already seen that the specific activity of \Kr is lower than in all other experiments.
+The second method however has the problem that theoretically every other isotope that is residual in the liquid argon contributes to the investigated change over time.
+It can therefor be very likely that our mistakes lies in the assumption that all contribution of any other isotope to this change can be ignored. 
+In the beginning of this chapter we already discussed all of the isotopes that are the most probable sources of error.
+We already mentioned there that any contributions from \nuc{Ar}{39} and \nuc{Po}{210} can be disregarded due to their either high half life or their high mean kinetic energy of the escaping particle.
+But as it was already indicated there, it might be necessary to discuss the influence of \nuc{Ar}{42} further.
+\nuc{Ar}{42} has a half life of 32.9 y which is in the same order of magnitude as the half life of \Kr.
+Therefore, we can expect to see a change in its activity over the course of \PII of about 4.4$\%$ of its absolute specific activity.
+With an specific activity big enough one could expect this isotope to be responsible for the measured decrease.
+But due to the fact that \nuc{Ar}{42}'s specific activity has already been determined to be much lower than the measured amplitude it can not be the only cause of this .
+\\
+
+But what is really interesting about \nuc{Ar}{42}, is not the decay of \nuc{Ar}{42} itself, but rather the contributions of the daughter nuclei \nuc{K}{42}.
+\nuc{K}{42} has a half life of 12.355 h \cite{chen_nuclear_2016}.
+It can now be approximated, that \nuc{K}{42}'s specific activity is equal to \nuc{Ar}{42}'s specific activity.
+This can be assumed, because in comparison to the half life of \nuc{Ar}{42} the resulting \nuc{K}{42} practically decays instantaneously.
+This means that it is possible to directly assign one \nuc{K}{42} decay to each \nuc{Ar}{42} that decays.
+This doubles the number of decays which can be attributed to \nuc{Ar}{42}.
+But assuming that the individual \nuc{Ar}{42} and \nuc{K}{42} isotopes are homogeneously distributed in the liquid argon, their combined specific activity is still by far not big enough to explain the bigger amplitude measured.
+\\
+
+And here comes the critical point.
+The \nuc{K}{42} isotopes are not homogeneously distributed in the liquid argon.
+To understand why they are not we have look at what a \nuc{K}{42} does right after it is formed.
+Right after a \nuc{Ar}{42} decays is the resulting \nuc{K}{42} isotope positively ionized.
+This results from the newly formed electron escaping from the decay position due to its high velocity.
+Because the \nuc{K}{42} isotope is positively charged, it is its aim to reduce its potential energy created by electrostatic fields.
+\\
+
+Such fields are present in the liquid argon tank originate from the germanium detectors.
+In a germanium detector it is necessary to create a great electrostatic potential difference between the doped electrodes.
+The resulting electric field separates electron-hole pairs that might have been created by other particles depositing their energy in the semiconductor \cite{spieler_semiconductor_2005}.
+The field then guids the particles to the respective electrodes and by that creating a current which can be measured externally.
+In the case of the GERDA experiment are strong fields necessary.
+They are supposed to guarantee that the majority of electron-hole pairs reach the corresponding electrodes much faster than their mean free time $\tau$. %Hier noch die Buchquelle
+If the fields would not be as strong, the detection probability of any event would be much lower which is not ideal for an experiment in which extremely rare events have to be measured.
+\\
+
+Now that the positively ionized isotopes see these electrostatic fields of the detectors, they want to move in the direction of the negative charge located on the outer negatively doped surface of the detectors.
+Because in the liquid argon the mean time it takes the ionized \nuc{K}{42} to capture an electron as compensate for its positive charge is relatively long. %!!!!! hier brauche ich noch das paper zur charakteritsichen Zeit in der das Nuklid ionisiert ist !!!!!
+Thats why even though the fields are not very strong outside of the detectors the \nuc{K}{42} can still travel a relatively long distance before it either captures an electron or decays further. 
+However, due to the higher density of \nuc{K}{42} isotopes near the germanium detectors it can be expected that also the specific activity around the detector increases.
+\\
+
+This effect has already been measured in the GERDA set up and it is one of the greatest background sources of the whole experiment.
+\nuc{K}{42} has also the unfortunate characteristic for the GERDA experiment that its end point energy at about $Q_{\beta}=3525\unit{MeV}$ lies higher than the end point energy of the double beta decay of \nuc{Ge}{76} $Q_{\beta \beta} = 2039\unit{MeV}$.
+This means that electrons of the \nuc{K}{42} decay can create background events in the investigated rage. 
+Initially it was not expected to create much background.
+Its influence on the measurement however was only recognized after the start of \PI, when its counting rate was too high by a factor of 20. \cite{becerici_schmidt_results_2014}. %!!!!! Refernz zu Becerici Schmidt 
+Techniques to suppress the background of \nuc{K}{42} were introduced over time like the usage of nylon mini-shrouds as a mechanically barrier.
+The mini-shrouds together with active filters of the pulse shape analysis and the liquid argon veto have proven to bee able to suppress \nuc{K}{42} events by more then three orders of magnitude.
+\\
+
+In this case however it is not possible for the analysis to use the active filters to suppress the \nuc{K}{42} further.
+Because otherwise we would also filter out the \Kr events that we wanted to investigate in the first place.
+So it still can be expected that a not negligible proportion of the measured specific activity comes from the denser \nuc{K}{42} in the region of the detectors.
+What effective specific activity can be expected from the \nuc{Ar}{42} is difficult to estimate, but you can assume that it should be far greater than that of \Kr.
+To get a quantitative approximation, you can now use the plot of the event rate change again (see \ref{fig:ChangeInEventRate}) and modify the fit function used so that two exponential decays plus a constant background are taken into account.
+Both of the exponential decay fit functions have their half life fixed to the respective values of \Kr (10.739y) and \nuc{Ar}{42} (32.9y).
+The used fit function can be seen in equation \ref{fig:double}, the resulting fit function in figure and the fit parameter in table.
+\begin{equation}
+    \mathrm{f}(x) = \mathrm{A}\times\exp\left(-\frac{\log(2)}{\mathrm{B}} x \right) + \mathrm{C}\times\exp\left(-\frac{\log(2)}{\mathrm{D}} x \right) + \mathrm{E}
+\end{equation}
+\begin{figure}[t!]
+	\centering
+	\ifmakefigures%
+	\includegraphics[width=100mm]{./Bilder/doppelt.pdf}
+	\fi%
+	\caption{double exponential decay fit}
+	\label{fig:double}
+\end{figure}%
+\\
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|c|}
+        \hline
+        Name  & Value \\
+        \hline
+        A     & 0.0010244$\pm$0.000122073 \\
+        \hline
+        B    & 10.739 \\
+        \hline
+        C   & 0.00145395$\pm$0.000129916 \\
+        \hline
+        D  & 32.9 \\
+        \hline
+        E & 0.00175652$\pm$0.000119112 \\
+        \hline
+    \end{tabular}
+    \caption{Fit parameters of the double exponential decay analysis}
+    \label{tab:doubleFitpara}
+\end{table}
+\\
+
+In a direct comparison of figure \ref{fig:double} with graph \ref{fig:ChangeInEventRateFit} no real difference can be see.
+But when looking at the fit parameters you can see that in this case the \nuc{Ar}{42} exponential fit function has a bigger amplitude than \Kr.
+Because the \nuc{K}{42} density is not homogeneously distributed in the liquid argon it is impossible to run a Monte Carlo simulation to again determine a new detector efficiency.
+But using the conversation factor determined from the second simulation to make an estimate the respective effective specific activities can be calculated to $(40.4\pm0.59)\frac{\unit{mBq}}{\unit{l}}$ for \Kr and $(57.3\pm0.66)\frac{\unit{mBq}}{\unit{l}}$ for all of the decays resulting from \nuc{Ar}{42}.
+These values are both still way to high for what was expected from them.
+For the \Kr it is obvious but for \nuc{Ar}{42} the maximum effective specific activity expected to be measured should have only been about one orders of magnitude higher than the actual specific activity of only the \nuc{Ar}{42}.
+Due to the fit parameters still generating far too much specific activity for these isotopes shows that other sources of change are still not accounted for.
+Nevertheless it has been shown with this fit that \Kr does not contribute solemnly to the change of count rate over time and with this the assumption from before has been shown to be false.
+\\
+
+Theoretically it would now still be possible to determine an specific activity of \Kr from plot \ref{fig:ChangeInEventRate} but considerein every individual source of change in count rate.
+But because of the higher number of fit parameters that would have to be determined and the relatively large uncertainties in the plot compared to the overall change, it is not difficult to be pessimistic whether this analysis can even make a statement about the specific activity of \Kr.
+\\
+
+Now, at the end of this analysis, one could finally look again at what the results would have looked like if the specific activity of \Kr from the WARP or Darkside experiments had been present.
 Again in the case of the WARP experiment an activity of $(0.16\pm0.13)\frac{\unit{Bq}}{\unit{l}}$ was measured. 
-If we were to measured its equivalent amplitude in a graph like figure \ref{fig:ChangeInEventRateFit} it would greatly dominate over the constant background and a clear change would have been able to be seen.
-On the other hand is the activity in the Darkside experiment with its $(2,8577 \pm 0,18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
-Because we expect the specific activity of \Kr in the GERDA experiment to be about an order of magnitude smaller than the one in the Darkside experiment we can assume that the error actually originates in the second approach.
-As we have already mentioned several times in these theses, one of the weaknesses of this approach is the necessary assumption that only \Kr changes its activity over time.
-Compared to \nuc{Ar}{39} which also has its mean beta energy in the same energy range as \Kr this holds true with its half life of 269 y.
-In all of Phase II its activity should have only dropped by only 0.56$ \% $ which can be ignored.
-As it was also shown, \nuc{Ar}{42}'s activity is one order of magnitude smaller than
-As already mentioned above it has a half life of 32.9 y which which leads to a change of already about 4.4$\%$.
-This should theoretically be big enough to be able to measure its change over time.
-However its specific activity has already been determined 
-
-
-
-
-
-!!!!! UND HIER DANN DIE ERKLÄRUNG !!!!!  
-
-  
-
-
+If one would measure its equivalent amplitude in a diagram like Figure \ref{fig:ChangeInEventRateFit} a significant change would have been visible.
+On the other hand is the activity in the Darkside experiment with its $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ too small to measure an apparent change over time.
+\\
 
 % use fit to calculate the decrease in rate of the signals in range from 200 to 500keV
 % from fit and assumption that only Kr85's activity is decreasing one can calculate the specific activity from the amplitude of the fit
 
 % use Volume of LAr-Tank to determine the number of Kr85 and from this the concentration in the argon
 
-\section{Conclusion and Discussion}
-\label{sec:calcOfTheCon}
+\chapter{Summary and Outlook}
+\label{sec:ConcAndOutlook}
 
-With all the work done in this paper it could now finally be shown that the activity of \nuc{Kr}{85} in the liquid argon of the GERDA experiment has a value of 0.074 $\frac{\unit{mBq}}{\unit{l}}$. 
+With the line count rate analysis carried out in this paper it could be shown that the specific activity of \nuc{Kr}{85} in the liquid argon of the GERDA experiment has a value of $(0.508\pm0.0857) \frac{\unit{mBq}}{\unit{l}}$. 
+Compared to WARPs $(160\pm130)\frac{\unit{mBq}}{\unit{l}}$ and to Darksides $(2.8577 \pm 0.18122) \frac{\unit{mBq}}{\unit{l}}$ its value is much smaller.
+On the other hand, the second attempt to determine a value for the specific activity via the change of count rate over time has failed.
+This was due to the falsely made assumption that \Kr is the only isotope in the liquid argon to shoe significant change in its activity over time.
+
+
+
 
 
 
